@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text-Translation</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <div class="container">
+        <nav>
+            <a href="#home" class="logo">Text-Translation</a>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#features">Features</a>
+            </div>
+            <div class="nav-links">
+                <div class="dropdown">
+                    <a href="#">Account &#9662;</a>
+                    <div class="dropdown-content">
+                        <a class="sign-up" href="/auth">Sign-in</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Hero Section -->
+    <div class="container">
+        <div class="hero-section" id="home">
+            <div class="hero-content">
+                <h1>Transform Communication with AI Translation</h1>
+                <p class="hero-description">
+                    Break language barriers with our context-aware translation system. Experience seamless English to
+                    regional language conversion with preserved meaning and cultural relevance.
+                </p>
+                <a href="/auth" class="cta-button">Get Started</a>
+
+                <div class="testimonial">
+                    <div class="testimonial-image">
+                        <img src="/img/hero.webp" alt="User testimonial">
+                    </div>
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">
+                            <span class="quote-mark">"</span>
+                            Text-Translation revolutionizes communication by maintaining context and cultural nuances
+                            while translating between English and regional languages.
+                            <span class="quote-mark">"</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="/img/hero.webp" alt="Multilingual communication interface">
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <section id="features" class="features-flip">
+        <div class="container">
+            <h2>Our Features</h2>
+            <div class="flip-cards">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <h3>Context-Aware Translation</h3>
+                            <p>Hover to learn more</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>AI-powered translations that preserve context and tone</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <h3>Multi-Format Input</h3>
+                            <p>Hover to learn more</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Supports text, images (OCR), and handwritten input</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <h3>Domain-Specific Adaptation</h3>
+                            <p>Hover to learn more</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Specialized translation for navigation, food, travel etc.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <h3>Real-Time Processing</h3>
+                            <p>Hover to learn more</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Low-latency translations with error correction</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <div class="about-section" id="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>
+                Text-Translation is committed to bridging language gaps through AI-powered solutions. Our system
+                delivers accurate, context-aware translations across multiple Indian languages while integrating
+                seamlessly with various applications.
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Text-Translation</h3>
+                    <p>Breaking Language Barriers with AI</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <ul>
+                            <li><a href="#features">Features</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Text-Translation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- index.ejs: Add this at the bottom before </body> -->
+    <script>
+    <% if (typeof targetSection !== 'undefined') { %>
+            window.onload = function() {
+                var section = document.getElementById("<%= targetSection %>");
+                if (section) {
+                    section.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+    <% } %>
+    </script>
+
+    <script src="/js/main.js"></script>
+</body>
+
+</html>
