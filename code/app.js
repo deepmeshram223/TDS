@@ -91,9 +91,22 @@ app.get("/auth", (req, res) => {
     res.render("authPage")
 });
 
-app.get('/dashboard', verifyToken, (req, res) => {
-    res.render("dashboard")
-})
+app.get('/dashboard', verifyToken, async (req, res) => {
+    try {
+        // Fetch the logged-in user from the database
+        const user = await User.findById(req.user.id);
+
+        if (!user) {
+            return res.redirect('/auth'); // Redirect if user not found
+        }
+
+        // Pass the username to the EJS template
+        res.render("dashboard", { username: user.username });
+    } catch (err) {
+        console.error("Error fetching user:", err);
+        res.redirect('/auth');
+    }
+});
 
 
 app.post('/register', async (req, res) => {
